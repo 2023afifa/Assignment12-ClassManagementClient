@@ -8,6 +8,8 @@ import { router } from './Routes/Routes';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <div className='font-noto'>
+      <RouterProvider router={router} />
+    </div>
   </React.StrictMode>,
 )
