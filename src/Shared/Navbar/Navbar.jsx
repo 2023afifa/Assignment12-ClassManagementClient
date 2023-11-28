@@ -1,13 +1,25 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
+    const { user, logOut } = useAuth();
 
     const navLink =
         <>
             <li><NavLink className="mr-2" to="/">Home</NavLink></li>
             <li><NavLink className="mr-2" to="/allclass">All Classes</NavLink></li>
-            <li><NavLink className="mr-2" to="/teachon">Teach On SkillNest</NavLink></li>
+            <li><NavLink className="mr-2" to="/request">Teach On SkillNest</NavLink></li>
         </>
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                console.log("Logged out successfully");
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
 
     return (
         <div>
@@ -30,19 +42,25 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div className="dropdown dropdown-end">
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                            </div>
-                        </div>
-                        <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a>User Name</a></li>
-                            <li><a>Dashboard</a></li>
-                            <li><a>Logout</a></li>
-                        </ul>
-                    </div>
-                    <a className="btn">Sign In</a>
+                    {
+                        user ?
+                            <>
+                                <div className="dropdown dropdown-end">
+                                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                        <div className="w-10 rounded-full">
+                                            <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
+                                        </div>
+                                    </div>
+                                    <ul className="menu menu-sm dropdown-content font-semibold mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                        <li><a>Name: {user.displayName}</a></li>
+                                        <li><Link to="/dashboard">Dashboard</Link></li>
+                                        <button onClick={handleLogout} className="bg-cyan-500 text-white rounded-lg py-1 mt-2">Logout</button>
+                                    </ul>
+                                </div>
+                            </>
+                            :
+                            <Link to="/signin"><button className="btn">Sign In</button></Link>
+                    }
                 </div>
 
             </div>
