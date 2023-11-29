@@ -3,10 +3,13 @@ import { MdLaptopChromebook } from "react-icons/md";
 import { RiContactsBook2Line } from "react-icons/ri";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../Hooks/useAdmin";
+import useTeacher from "../Hooks/useTeacher";
 
 
 const Dashboard = () => {
     const [isAdmin] = useAdmin();
+    const [isTeacher] = useTeacher();
+
 
     return (
         <div className="flex">
@@ -19,7 +22,7 @@ const Dashboard = () => {
                 <ul className="menu">
                     {
                         isAdmin ?
-                            <>
+                            (<>
                                 <li>
                                     <NavLink to="/dashboard/adminprofile"> Admin Profile</NavLink>
                                 </li>
@@ -27,21 +30,34 @@ const Dashboard = () => {
                                     <NavLink to="/dashboard/users"> Users</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/dashboard/classes"> All Classes</NavLink>
+                                    <NavLink to="/dashboard/classes"> All Class Requests</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/dashboard/request"> Teacher Request</NavLink>
                                 </li>
-                            </>
+                            </>)
                             :
-                            <>
-                                <li>
-                                    <NavLink to="/dashboard/studentprofile"> Student Profile</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to="/dashboard/enrollclass"> My Enroll Class</NavLink>
-                                </li>
-                            </>
+                            isTeacher ?
+                                (<>
+                                    <li>
+                                        <NavLink to="/dashboard/addclass"> Add Class</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/dashboard/myclass"> My Class</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/dashboard/teacherprofile"> Teacher Profile</NavLink>
+                                    </li>
+                                </>)
+                                :
+                                (<>
+                                    <li>
+                                        <NavLink to="/dashboard/studentprofile"> Student Profile</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink to="/dashboard/enrollclass"> My Enroll Class</NavLink>
+                                    </li>
+                                </>)
                     }
                     <div className="divider"></div>
                     <li>

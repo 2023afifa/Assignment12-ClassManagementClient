@@ -10,6 +10,9 @@ import Users from "../Pages/AllDashboard/Admin/Users/Users";
 import AdminProfile from "../Pages/AllDashboard/Admin/AdminProfile/AdminProfile";
 import TeacherRequest from "../Pages/TeacherRequest/TeacherRequest";
 import PrivateRoute from "./PrivateRoute";
+import Requests from "../Pages/AllDashboard/Admin/Requests/Requests";
+import AddClass from "../Pages/AllDashboard/Teacher/AddClass/AddClass";
+import Classes from "../Pages/AllDashboard/Admin/Classes/Classes";
 
 export const router = createBrowserRouter([
     {
@@ -46,11 +49,23 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "users",
-                element: <Users></Users>,
+                element: <PrivateRoute><Users></Users></PrivateRoute>,
             },
             {
                 path: "adminprofile",
-                element: <AdminProfile></AdminProfile>,
+                element: <PrivateRoute><AdminProfile></AdminProfile></PrivateRoute>,
+            },
+            {
+                path: "request",
+                element: <PrivateRoute><Requests></Requests></PrivateRoute>,
+            },
+            {
+                path: "classes",
+                element: <PrivateRoute><Classes></Classes></PrivateRoute>,
+            },
+            {
+                path: "addclass",
+                element: <PrivateRoute><AddClass></AddClass></PrivateRoute>,
             }
         ]
     }

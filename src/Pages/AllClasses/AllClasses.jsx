@@ -1,10 +1,31 @@
+import { useEffect, useState } from "react";
 import Navbar from "../../Shared/Navbar/Navbar";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import AllClass from "./AllClass";
 
 const AllClasses = () => {
+    const [allClass, setAllClass] = useState([]);
+    const axiosPublic = useAxiosPublic();
+
+    useEffect(() => {
+        axiosPublic("/addclass")
+            .then(res => {
+                setAllClass(res.data);
+            })
+    }, [])
+
+    const accepted = allClass.filter(c => c.classStatus === "Accepted");
+    console.log(accepted);
+
     return (
         <div>
             <Navbar></Navbar>
-            <h3>All Class</h3>
+            <h2 className="text-center text-3xl font-semibold my-5">All Classes</h2>
+            <div className="grid lg:grid-cols-3 mb-10">
+                {
+                    accepted.map(card => <AllClass key={card.id} card={card}></AllClass>)
+                }
+            </div>
         </div>
     );
 };
