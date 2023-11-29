@@ -13,6 +13,9 @@ import PrivateRoute from "./PrivateRoute";
 import Requests from "../Pages/AllDashboard/Admin/Requests/Requests";
 import AddClass from "../Pages/AllDashboard/Teacher/AddClass/AddClass";
 import Classes from "../Pages/AllDashboard/Admin/Classes/Classes";
+import ClassDetails from "../Pages/ClassDetails/ClassDetails";
+import MyClass from "../Pages/AllDashboard/Teacher/MyClass/MyClass";
+import Update from "../Pages/AllDashboard/Teacher/Update/Update";
 
 export const router = createBrowserRouter([
     {
@@ -29,6 +32,11 @@ export const router = createBrowserRouter([
                 element: <AllClasses></AllClasses>,
             },
             {
+                path: "/details/:id",
+                element: <PrivateRoute><ClassDetails></ClassDetails></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/addclass/${params.id}`),
+            },
+            {
                 path: "/request",
                 element: <PrivateRoute><TeacherRequest></TeacherRequest></PrivateRoute>,
             },
@@ -39,7 +47,12 @@ export const router = createBrowserRouter([
             {
                 path: "/signin",
                 element: <SignIn></SignIn>,
-            }
+            },
+            {
+                path: "/update/:id",
+                element: <PrivateRoute><Update></Update></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/addclass/${params.id}`),
+            },
         ]
     },
     {
@@ -66,7 +79,12 @@ export const router = createBrowserRouter([
             {
                 path: "addclass",
                 element: <PrivateRoute><AddClass></AddClass></PrivateRoute>,
-            }
+            },
+            {
+                path: "myclass",
+                element: <PrivateRoute><MyClass></MyClass></PrivateRoute>,
+            },
+            
         ]
     }
 ]);

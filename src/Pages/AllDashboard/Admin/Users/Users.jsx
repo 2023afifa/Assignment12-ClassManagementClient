@@ -3,10 +3,12 @@ import { useQuery } from "@tanstack/react-query";
 import { HiUserGroup } from "react-icons/hi2";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
+// import useTeacher from "../../../../Hooks/useTeacher";
 
 const Users = () => {
     // const axiosSecure = useAxiosSecure();
     const axiosPublic = useAxiosPublic();
+    // const [isTeacher] = useTeacher();
 
     const { data: users = [], refetch } = useQuery({
         queryKey: ["users"],
@@ -92,7 +94,9 @@ const Users = () => {
                                         user.role === "admin" ?
                                             "Admin"
                                             :
-                                            <button onClick={() => handleMakeAdmin(user)} className="btn bg-cyan-500 text-white text-lg"> <HiUserGroup /> </button>
+                                            // isTeacher ? "Teacher"
+                                            // :
+                                            (<button onClick={() => handleMakeAdmin(user)} className="btn bg-cyan-500 text-white text-lg"> <HiUserGroup /> </button>)
                                     }
                                 </td>
                             </tr>)

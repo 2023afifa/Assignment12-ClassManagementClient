@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 const AllClass = ({ card }) => {
-    const { title, name, image, price, description } = card;
+    const { _id, title, name, image, price, description } = card;
 
     return (
         <div>
@@ -12,7 +14,7 @@ const AllClass = ({ card }) => {
                     <p><span className="font-semibold">Price:</span> ${price}</p>
 
                     <div className="card-actions justify-center">
-                        <button className="btn bg-cyan-500 text-white">Enroll</button>
+                        <Link to={`/details/${_id}`}><button className="btn bg-cyan-500 text-white">Enroll</button></Link>
                     </div>
                 </div>
             </div>
