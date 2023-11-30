@@ -42,7 +42,7 @@ export const router = createBrowserRouter([
             {
                 path: "/details/:id",
                 element: <PrivateRoute><ClassDetails></ClassDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/addclass/${params.id}`),
+                loader: ({params}) => fetch(`https://class-management-server-seven.vercel.app/addclass/${params.id}`),
             },
             {
                 path: "/request",
@@ -59,22 +59,22 @@ export const router = createBrowserRouter([
             {
                 path: "/update/:id",
                 element: <PrivateRoute><Update></Update></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/addclass/${params.id}`),
+                loader: ({ params }) => fetch(`https://class-management-server-seven.vercel.app/addclass/${params.id}`),
             },
             {
                 path: "/pay/:id",
                 element: <PrivateRoute><Pay></Pay></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/addclass/${params.id}`),
+                loader: ({ params }) => fetch(`https://class-management-server-seven.vercel.app/addclass/${params.id}`),
             },
             {
                 path: "/seedetails/:id",
                 element: <PrivateRoute><SeeDetails></SeeDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/addclass/${params.id}`),
+                loader: ({ params }) => fetch(`https://class-management-server-seven.vercel.app/addclass/${params.id}`),
             },
             {
                 path: "/enrollclass/:id",
                 element: <PrivateRoute><MyTask></MyTask></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/assignment/${params.id}`),
+                loader: ({ params }) => fetch(`https://class-management-server-seven.vercel.app/assignment/${params.id}`),
             },
         ]
     },

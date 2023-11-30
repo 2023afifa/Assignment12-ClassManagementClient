@@ -102,7 +102,7 @@ export default TeacherRequest;
 //     const request = { name, photo, experience, category };
 //     console.log(request);
 
-//     fetch("http://localhost:5000/request", {
+//     fetch("https://class-management-server-seven.vercel.app/request", {
 //         method: "POST",
 //         headers: {
 //             "content-type": "application/json"
