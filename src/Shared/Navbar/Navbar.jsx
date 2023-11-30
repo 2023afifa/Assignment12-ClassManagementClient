@@ -33,7 +33,7 @@ const Navbar = () => {
                             {navLink}
                         </ul>
                     </div>
-                    <img className="h-8 md:h-14 mr-2" src="../../../images/education.png" alt="" />
+                    <img className="h-8 md:h-14 mr-2" src="https://i.ibb.co/cJR92Pt/education.png" alt="" />
                     <a className="normal-case text-xl md:text-3xl text-cyan-500 font-bold">SkillNest Academy</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -52,8 +52,8 @@ const Navbar = () => {
                                         </div>
                                     </div>
                                     <ul className="menu menu-sm dropdown-content font-semibold mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li><a>Name: {user.displayName}</a></li>
-                                        <li><Link to="/dashboard">Dashboard</Link></li>
+                                        <li><a className="text-cyan-700 md:text-2xl my-3">{user.displayName}</a></li>
+                                        <li><Link to="/dashboard" className="md:text-lg">Dashboard</Link></li>
                                         <button onClick={handleLogout} className="bg-cyan-500 text-white rounded-lg py-1 mt-2">Logout</button>
                                     </ul>
                                 </div>

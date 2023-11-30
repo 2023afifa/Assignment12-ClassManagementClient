@@ -37,32 +37,6 @@ const TeacherRequest = () => {
             .catch(error => console.log(error));
     }
 
-    // const handleRequest = e => {
-    //     e.preventDefault();
-    //     const form = e.target;
-    //     const name = form.name.value;
-    //     const photo = form.image.value;
-    //     const experience = form.experience.value;
-    //     const category = form.category.value;
-
-    //     const request = { name, photo, experience, category };
-    //     console.log(request);
-
-    //     fetch("http://localhost:5000/request", {
-    //         method: "POST",
-    //         headers: {
-    //             "content-type": "application/json"
-    //         },
-    //         body: JSON.stringify(request)
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-    //             if (data.insertedId) {
-    //                 toast("Added the food successfully");
-    //             }
-    //         })
-    // }
 
     return (
         <div>
@@ -107,7 +81,46 @@ const TeacherRequest = () => {
                     <input className="bg-cyan-500 text-white font-semibold w-full rounded-md py-2 mt-4" type="submit" value="Submit for Review" />
                 </form>
             </div>
-            {/* <Navbar></Navbar>
+        </div>
+    );
+};
+
+export default TeacherRequest;
+
+
+
+
+
+// const handleRequest = e => {
+//     e.preventDefault();
+//     const form = e.target;
+//     const name = form.name.value;
+//     const photo = form.image.value;
+//     const experience = form.experience.value;
+//     const category = form.category.value;
+
+//     const request = { name, photo, experience, category };
+//     console.log(request);
+
+//     fetch("http://localhost:5000/request", {
+//         method: "POST",
+//         headers: {
+//             "content-type": "application/json"
+//         },
+//         body: JSON.stringify(request)
+//     })
+//         .then(res => res.json())
+//         .then(data => {
+//             console.log(data);
+//             if (data.insertedId) {
+//                 toast("Added the food successfully");
+//             }
+//         })
+// }
+
+
+
+{/* <Navbar></Navbar>
             <h2 className="text-center text-3xl font-semibold my-5">Submit Your Request</h2>
             <div className="bg-slate-50 my-20">
                 <form onSubmit={handleRequest} className="px-40">
@@ -153,8 +166,3 @@ const TeacherRequest = () => {
                 </form>
             </div>
             <ToastContainer /> */}
-        </div>
-    );
-};
-
-export default TeacherRequest;

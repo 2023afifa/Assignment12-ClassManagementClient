@@ -1,16 +1,17 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../Shared/Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const SignIn = () => {
+    const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
     const location = useLocation();
 
     const from = location.state?.from?.pathname || "/";
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn, logInUserGoogle } = useContext(AuthContext);
 
     const handleSignIn = event => {
         event.preventDefault();
@@ -18,6 +19,8 @@ const SignIn = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+        setErrorMessage("");
+
 
         signIn(email, password)
             .then(result => {
@@ -42,7 +45,22 @@ const SignIn = () => {
                 });
                 navigate(from, { replace: true });
             })
+            .catch(error => {
+                console.error(error);
+                setErrorMessage(error.message);
+            })
     }
+
+    const handleGoogleLogIn = () => {
+        logInUserGoogle()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
+
 
     return (
         <div>
@@ -66,14 +84,16 @@ const SignIn = () => {
                                 </label>
                                 <input type="password" name="password" placeholder="Enter password" className="input input-bordered" required />
                             </div>
+                            {
+                                errorMessage && <p className="text-center text-red-500">{errorMessage}</p>
+                            }
 
                             <div className="form-control mt-6">
                                 <input className="btn bg-cyan-500 text-white" type="submit" value="Login" />
                             </div>
                         </form>
-                        <p className="text-center pb-3">Login with <a className="font-bold">Google</a></p>
+                        <p className="text-center pb-3">Login with <a onClick={handleGoogleLogIn} className="font-bold">Google</a></p>
                         <p className='mx-auto mb-5 text-cyan-500 font-bold text-xl'><small>New here? <Link to="/signup">Create a New Account</Link></small></p>
-                        {/* <SocialLogin></SocialLogin> */}
                     </div>
                 </div>
             </div>

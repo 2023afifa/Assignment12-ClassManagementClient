@@ -16,10 +16,10 @@ const Dashboard = () => {
 
             <div className="w-64 min-h-screen bg-cyan-500">
                 <div className="text-center py-5">
-                    <h1 className="text-xl font-black">SkillNest</h1>
-                    <p className="font-semibold">Academy</p>
+                    <h1 className="text-2xl font-extrabold">SkillNest</h1>
+                    <p className="text-xl font-semibold">Academy</p>
                 </div>
-                <ul className="menu">
+                <ul className="menu font-bold lg:text-lg">
                     {
                         isAdmin ?
                             (<>
@@ -73,6 +73,7 @@ const Dashboard = () => {
             </div>
 
             <div className="flex-1 p-8">
+                <h2 className="text-center text-cyan-700 lg:text-5xl font-extrabold">Dashboard</h2>
                 <Outlet></Outlet>
             </div>
 

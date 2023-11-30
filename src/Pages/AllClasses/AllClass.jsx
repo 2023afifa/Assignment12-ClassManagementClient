@@ -18,7 +18,6 @@ const AllClass = ({ card }) => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };

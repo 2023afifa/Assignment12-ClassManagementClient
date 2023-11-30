@@ -3,7 +3,7 @@ const Footer = () => {
         <div>
             <footer className="footer footer-center p-10 bg-neutral text-neutral-content">
                 <aside>
-                    <img className="w-20" src="../../../images/education.png" alt="" />
+                    <img className="w-20" src="https://i.ibb.co/cJR92Pt/education.png" alt="" />
                     <p className="font-bold">
                         SkillNest Acedemy <br />Providing reliable tech since 2018
                     </p>

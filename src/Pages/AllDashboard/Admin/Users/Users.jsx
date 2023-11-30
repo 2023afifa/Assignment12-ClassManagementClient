@@ -1,12 +1,10 @@
-// import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import { HiUserGroup } from "react-icons/hi2";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
-// import useTeacher from "../../../../Hooks/useTeacher";
+
 
 const Users = () => {
-    // const axiosSecure = useAxiosSecure();
     const axiosPublic = useAxiosPublic();
     // const [isTeacher] = useTeacher();
 
@@ -36,31 +34,6 @@ const Users = () => {
             })
     }
 
-    // const handleDeleteUser = user => {
-    //     Swal.fire({
-    //         title: "Are you sure?",
-    //         text: "You won't be able to revert this!",
-    //         icon: "warning",
-    //         showCancelButton: true,
-    //         confirmButtonColor: "#3085d6",
-    //         cancelButtonColor: "#d33",
-    //         confirmButtonText: "Yes, delete it!"
-    //     }).then((result) => {
-    //         if (result.isConfirmed) {
-    //             axiosSecure.delete(`/user/${user._id}`)
-    //                 .then(res => {
-    //                     if (res.data.deletedCount > 0) {
-    //                         refetch();
-    //                         Swal.fire({
-    //                             title: "Deleted!",
-    //                             text: "Your file has been deleted.",
-    //                             icon: "success"
-    //                         });
-    //                     }
-    //                 })
-    //         }
-    //     });
-    // }
 
     return (
         <div>
@@ -110,3 +83,33 @@ const Users = () => {
 };
 
 export default Users;
+
+
+
+
+
+// const handleDeleteUser = user => {
+//     Swal.fire({
+//         title: "Are you sure?",
+//         text: "You won't be able to revert this!",
+//         icon: "warning",
+//         showCancelButton: true,
+//         confirmButtonColor: "#3085d6",
+//         cancelButtonColor: "#d33",
+//         confirmButtonText: "Yes, delete it!"
+//     }).then((result) => {
+//         if (result.isConfirmed) {
+//             axiosSecure.delete(`/user/${user._id}`)
+//                 .then(res => {
+//                     if (res.data.deletedCount > 0) {
+//                         refetch();
+//                         Swal.fire({
+//                             title: "Deleted!",
+//                             text: "Your file has been deleted.",
+//                             icon: "success"
+//                         });
+//                     }
+//                 })
+//         }
+//     });
+// }
