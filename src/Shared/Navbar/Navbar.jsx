@@ -33,7 +33,7 @@ const Navbar = () => {
                             {navLink}
                         </ul>
                     </div>
-                    <img className="h-8 md:h-14 mr-2" src="https://i.ibb.co/cJR92Pt/education.png" alt="" />
+                    <img className="h-8 md:h-16 mr-2" src="https://i.ibb.co/rsYwc84/5920.jpg" alt="" />
                     <a className="normal-case text-xl md:text-3xl text-cyan-500 font-bold">SkillNest Academy</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">

@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
       <QueryClientProvider client={queryClient}>
-        <div className='font-noto'>
+        <div className='font-cuprum'>
           <RouterProvider router={router} />
         </div>
       </QueryClientProvider>
