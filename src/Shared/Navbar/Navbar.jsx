@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import "./Navbar.css";
 
 const Navbar = () => {
     const { user, logOut } = useAuth();
@@ -22,8 +23,8 @@ const Navbar = () => {
     }
 
     return (
-        <div>
-            <div className="navbar bg-slate-50 md:px-10">
+        <div className="fixed w-full z-10">
+            <div className="navbar bg-black bg-opacity-20 md:px-10 lg:px-48">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,15 +34,13 @@ const Navbar = () => {
                             {navLink}
                         </ul>
                     </div>
-                    <img className="h-8 md:h-16 mr-2" src="https://i.ibb.co/rsYwc84/5920.jpg" alt="" />
-                    <a className="normal-case text-xl md:text-3xl text-cyan-500 font-bold">SkillNest Academy</a>
+                    {/* <img className="h-8 md:h-16 mr-2" src="https://i.ibb.co/rsYwc84/5920.jpg" alt="" /> */}
+                    <h1 className="normal-case text-xl md:text-3xl font-bold"><span className="text-slate-200">Skill</span><span className="text-sky-600">Nest</span> <span className="text-slate-200">Academy</span></h1>
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                <div className="navbar-end hidden lg:flex">
+                    <ul className="menu menu-horizontal px-1 font-bold text-lg text-slate-200 navStyle">
                         {navLink}
                     </ul>
-                </div>
-                <div className="navbar-end">
                     {
                         user ?
                             <>
@@ -59,7 +58,7 @@ const Navbar = () => {
                                 </div>
                             </>
                             :
-                            <Link to="/signin"><button className="btn">Sign In</button></Link>
+                            <Link to="/signin"><button className="bg-sky-700 text-white px-5 py-2 rounded-3xl hover:bg-sky-800">Sign In</button></Link>
                     }
                 </div>
 

@@ -1,0 +1,9 @@
+.navStyle > li > a.active {
+    background-color: transparent !important;
+    color: rgb(2 132 199) !important;
+}
+
+.navStyle > li > a:hover {
+    background-color: transparent !important;
+    color: rgb(203 213 225) !important;
+}
