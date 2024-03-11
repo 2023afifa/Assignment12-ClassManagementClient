@@ -14,13 +14,13 @@ const Home = () => {
         <div>
             <Navbar></Navbar>
             <Banner></Banner>
-            <Partners></Partners>
             <PopularClasses></PopularClasses>
             <Feedback></Feedback>
             <Total></Total>
             <TeacherJoin></TeacherJoin>
             <Topper></Topper>
             <Discount></Discount>
+            <Partners></Partners>
             <Footer></Footer>
         </div>
     );

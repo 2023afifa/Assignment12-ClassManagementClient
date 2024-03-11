@@ -1,10 +1,12 @@
 const PopularClasses = () => {
     return (
-        <div className="mb-20">
+        <div className="my-20">
             <h3 className="text-center text-3xl font-semibold mb-6">Our Popular Classes</h3>
             <div className="grid lg:grid-cols-3 gap-5">
-                <div className="card w-96 bg-base-100 shadow-xl mx-auto">
-                    <figure><img src="https://i.ibb.co/1qhc5hC/course18.jpg" alt="Shoes" /></figure>
+                <div className="card w-96 bg-base-100 rounded-md shadow-lg mx-auto">
+                    <figure className="h-60">
+                        <img className="" src="https://i.ibb.co/1qhc5hC/course18.jpg" alt="Shoes" />
+                    </figure>
                     <div className="card-body">
                         <h2 className="card-title">
                             Digital Marketing Masterclass
@@ -17,11 +19,13 @@ const PopularClasses = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card w-96 bg-base-100 shadow-xl mx-auto">
-                    <figure><img src="https://i.ibb.co/n1mxRLj/course5.jpg" alt="Shoes" /></figure>
+                <div className="card w-96 bg-base-100 rounded-md shadow-lg mx-auto">
+                    <figure className="h-60">
+                        <img src="https://i.ibb.co/n1mxRLj/course5.jpg" alt="Shoes" />
+                    </figure>
                     <div className="card-body">
                         <h2 className="card-title">
-                        Graphic Design for Beginners
+                            Graphic Design for Beginners
                             <div className="badge badge-secondary">Popular</div>
                         </h2>
                         <p>Start your journey in graphic design with this beginner-friendly course</p>
@@ -31,11 +35,13 @@ const PopularClasses = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card w-96 bg-base-100 shadow-xl mx-auto">
-                    <figure><img src="https://i.ibb.co/F5cCvBj/course10.jpg" alt="Shoes" /></figure>
+                <div className="card w-96 bg-base-100 rounded-md shadow-lg mx-auto">
+                    <figure className="h-60">
+                        <img src="https://i.ibb.co/F5cCvBj/course10.jpg" alt="Shoes" />
+                    </figure>
                     <div className="card-body">
                         <h2 className="card-title">
-                        Advanced French Conversation
+                            Advanced French Conversation
                             <div className="badge badge-secondary">Popular</div>
                         </h2>
                         <p>Enhance your French language skills with advanced conversation technique</p>
