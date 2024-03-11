@@ -20,11 +20,13 @@ const AllClasses = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <h2 className="text-center text-3xl font-semibold my-5">All Classes</h2>
-            <div className="grid lg:grid-cols-3 gap-6 mb-10">
-                {
-                    accepted.map(card => <AllClass key={card.id} card={card}></AllClass>)
-                }
+            <div className="mt-28">
+                <h2 className="text-center text-3xl font-semibold my-5">All Classes</h2>
+                <div className="grid lg:grid-cols-3 gap-6 mb-10">
+                    {
+                        accepted.map(card => <AllClass key={card.id} card={card}></AllClass>)
+                    }
+                </div>
             </div>
         </div>
     );
