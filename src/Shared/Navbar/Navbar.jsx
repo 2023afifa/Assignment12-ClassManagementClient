@@ -23,7 +23,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="fixed w-full z-10">
+        <div className="fixed w-full top-0 z-10">
             <div className="navbar bg-black bg-opacity-20 md:px-10 lg:px-48">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -50,10 +50,11 @@ const Navbar = () => {
                                             <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
                                         </div>
                                     </div>
-                                    <ul className="menu menu-sm dropdown-content font-semibold mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                        <li><a className="text-cyan-700 md:text-2xl my-3">{user.displayName}</a></li>
-                                        <li><Link to="/dashboard" className="md:text-lg">Dashboard</Link></li>
-                                        <button onClick={handleLogout} className="bg-cyan-500 text-white rounded-lg py-1 mt-2">Logout</button>
+                                    <ul className="menu menu-sm dropdown-content font-semibold mt-1 z-[1] p-2 shadow bg-slate-200 rounded w-52">
+                                        <li><h2 className="hover:bg-transparent">Name: <span>{user.displayName}</span></h2></li>
+                                        <li><h2 className="hover:bg-transparent">Email: <span>{user.email}</span></h2></li>
+                                        <li><Link to="/dashboard" className="md:text-xl my-2 text-sky-700">Go To Dashboard</Link></li>
+                                        <button onClick={handleLogout} className="bg-sky-700 text-white rounded-lg py-1 mt-2">Logout</button>
                                     </ul>
                                 </div>
                             </>
