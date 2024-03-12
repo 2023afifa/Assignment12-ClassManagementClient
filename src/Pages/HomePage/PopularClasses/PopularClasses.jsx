@@ -1,7 +1,7 @@
 const PopularClasses = () => {
     return (
         <div className="my-20 mx-10">
-            <h3 className="text-center text-3xl font-semibold mb-6">Our Popular Classes</h3>
+            <h3 className="text-center text-3xl font-bold mb-6">Our Popular Classes</h3>
             <div className="grid lg:grid-cols-3 gap-5">
                 <div className="card w-96 bg-base-100 rounded-md shadow-lg mx-auto">
                     <figure className="h-60">

@@ -15,7 +15,7 @@ const Total = () => {
 
     return (
         <div className="my-20">
-            <h3 className="text-center text-3xl font-semibold mb-3">Course Statistics</h3>
+            <h3 className="text-center text-3xl font-bold mb-3">Course Statistics</h3>
             <div className="text-center">
                 <div className="stats stats-vertical lg:stats-horizontal shadow bg-sky-600 text-slate-200 w-[800px] h-40">
                     <div className="stat">

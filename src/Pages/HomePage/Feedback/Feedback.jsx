@@ -15,7 +15,7 @@ export default function SimpleSlider() {
 
     const Feedback = () => {
         return (
-            <div className="my-20 mx-20">
+            <div className="my-20 overflow-hidden">
                 <h3 className="text-center text-3xl font-bold mb-3">Feedback from Our Students</h3>
                 <Slider {...settings}>
                     <div className="bg-sky-600 text-slate-200">

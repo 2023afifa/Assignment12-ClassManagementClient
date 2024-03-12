@@ -6,7 +6,7 @@ import Feedback from "../Feedback/Feedback";
 import Partners from "../Partners/Partners";
 import PopularClasses from "../PopularClasses/PopularClasses";
 import TeacherJoin from "../TeacherJoin/TeacherJoin";
-import Topper from "../Topper/Topper";
+import Teachers from "../Teachers/Teachers";
 import Total from "../Total/Total";
 
 const Home = () => {
@@ -18,7 +18,7 @@ const Home = () => {
             <Feedback></Feedback>
             <Total></Total>
             <TeacherJoin></TeacherJoin>
-            <Topper></Topper>
+            <Teachers></Teachers>
             <Discount></Discount>
             <Partners></Partners>
             <Footer></Footer>
