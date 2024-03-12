@@ -1,7 +1,6 @@
 import Footer from "../../../Shared/Footer/Footer";
 import Navbar from "../../../Shared/Navbar/Navbar";
 import Banner from "../Banner/Banner";
-import Discount from "../Discount/Discount";
 import Feedback from "../Feedback/Feedback";
 import Partners from "../Partners/Partners";
 import PopularClasses from "../PopularClasses/PopularClasses";
@@ -15,11 +14,10 @@ const Home = () => {
             <Navbar></Navbar>
             <Banner></Banner>
             <PopularClasses></PopularClasses>
-            <Feedback></Feedback>
             <Total></Total>
-            <TeacherJoin></TeacherJoin>
             <Teachers></Teachers>
-            <Discount></Discount>
+            <TeacherJoin></TeacherJoin>
+            <Feedback></Feedback>
             <Partners></Partners>
             <Footer></Footer>
         </div>
