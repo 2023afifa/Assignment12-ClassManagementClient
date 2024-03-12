@@ -1,10 +1,16 @@
-import { useQuery } from "@tanstack/react-query";
-import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import { useEffect, useState } from "react";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 const Total = () => {
+    const [ref, inView] = useInView();
+    const [isVisible, setIsVisible] = useState(false);
 
-
-
+    useEffect(() => {
+        if (inView) {
+            setIsVisible(true);
+        }
+    }, [inView]);
 
 
     return (
@@ -14,17 +20,47 @@ const Total = () => {
                 <div className="stats stats-vertical lg:stats-horizontal shadow bg-sky-600 text-slate-200 w-[800px] h-40">
                     <div className="stat">
                         <div className="text-2xl">Users</div>
-                        <div className="stat-value">1K+</div>
+                        <div className="stat-value">
+                            {
+                                isVisible ?
+                                    <>
+                                        <CountUp start={0} end={1000} duration={5} />
+                                        <span>+</span>
+                                    </>
+                                    :
+                                    <span ref={ref}>0</span>
+                            }
+                        </div>
                     </div>
 
                     <div className="stat">
                         <div className="text-2xl">Courses</div>
-                        <div className="stat-value">78</div>
+                        <div className="stat-value">
+                            {
+                                isVisible ?
+                                    <>
+                                        <CountUp start={0} end={70} duration={2} />
+                                        <span>+</span>
+                                    </>
+                                    :
+                                    <span ref={ref}>0</span>
+                            }
+                        </div>
                     </div>
 
                     <div className="stat">
                         <div className="text-2xl">Enrollment</div>
-                        <div className="stat-value">752</div>
+                        <div className="stat-value">
+                            {
+                                isVisible ?
+                                    <>
+                                        <CountUp start={0} end={750} duration={4} />
+                                        <span>+</span>
+                                    </>
+                                    :
+                                    <span ref={ref}>0</span>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
