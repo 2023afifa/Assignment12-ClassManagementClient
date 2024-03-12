@@ -26,8 +26,8 @@ const Navbar = () => {
 
     return (
         <div className="fixed w-full top-0 z-10">
-            <div className="navbar bg-black bg-opacity-20 px-10 lg:px-48">
-                <div className="w-1/2 justify-between">
+            <div className="navbar bg-black bg-opacity-20 px-10 md:px-5 lg:px-48">
+                <div className="md:navbar-start">
                     <h1 className="normal-case text-3xl font-bold"><span className="text-slate-200">Skill</span><span className="text-sky-600">Nest</span> <span className="text-slate-200">Academy</span></h1>
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost text-slate-200 md:hidden">
