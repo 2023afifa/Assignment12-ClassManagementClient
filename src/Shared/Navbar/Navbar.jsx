@@ -1,15 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import "./Navbar.css";
+import { MdOutlineMenu } from "react-icons/md";
+
 
 const Navbar = () => {
     const { user, logOut } = useAuth();
 
     const navLink =
         <>
-            <li><NavLink className="mr-2" to="/">Home</NavLink></li>
-            <li><NavLink className="mr-2" to="/allclass">All Classes</NavLink></li>
-            <li><NavLink className="mr-2" to="/request">Teach On SkillNest</NavLink></li>
+            <li><NavLink className="lg:mr-2" to="/">Home</NavLink></li>
+            <li><NavLink className="lg:mr-2" to="/allclass">All Classes</NavLink></li>
+            <li><NavLink className="lg:mr-2" to="/request">Teach On SkillNest</NavLink></li>
         </>
 
     const handleLogout = () => {
@@ -24,21 +26,20 @@ const Navbar = () => {
 
     return (
         <div className="fixed w-full top-0 z-10">
-            <div className="navbar bg-black bg-opacity-20 md:px-10 lg:px-48">
-                <div className="navbar-start">
+            <div className="navbar bg-black bg-opacity-20 px-10 lg:px-48">
+                <div className="w-1/2 justify-between">
+                    <h1 className="normal-case text-3xl font-bold"><span className="text-slate-200">Skill</span><span className="text-sky-600">Nest</span> <span className="text-slate-200">Academy</span></h1>
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        <div tabIndex={0} role="button" className="btn btn-ghost text-slate-200 md:hidden">
+                            <MdOutlineMenu className="text-2xl" />
                         </div>
-                        <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-40 navStyle">
                             {navLink}
                         </ul>
                     </div>
-                    {/* <img className="h-8 md:h-16 mr-2" src="https://i.ibb.co/rsYwc84/5920.jpg" alt="" /> */}
-                    <h1 className="normal-case text-xl md:text-3xl font-bold"><span className="text-slate-200">Skill</span><span className="text-sky-600">Nest</span> <span className="text-slate-200">Academy</span></h1>
                 </div>
-                <div className="navbar-end hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 font-bold text-lg text-slate-200 navStyle">
+                <div className="navbar-end hidden md:flex">
+                    <ul className="menu menu-horizontal px-1 font-bold lg:text-lg text-slate-200 navStyle">
                         {navLink}
                     </ul>
                     {
