@@ -13,6 +13,14 @@ const Teachers = () => {
         autoplaySpeed: 2000,
         cssEase: "linear",
         pauseOnHover: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+        ]
     };
 
     return (
