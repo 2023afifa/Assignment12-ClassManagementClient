@@ -4,22 +4,23 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import Footer from "../../Shared/Footer/Footer";
 
 
 const TeacherRequest = () => {
     const { user } = useContext(AuthContext);
     const axiosPublic = useAxiosPublic();
-    const { register, handleSubmit, reset, } = useForm();
+    const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
         console.log(data);
         const userInfo = {
-            name: data.name,
-            photo: data.photo,
-            email: data.email,
+            name: user.displayName,
+            photo: user.photoURL,
+            email: user.email,
             experience: data.experience,
             category: data.category,
-            status: data.status,
+            status: "Pending",
         }
         axiosPublic.post("/request", userInfo)
             .then(res => {
@@ -41,32 +42,26 @@ const TeacherRequest = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <h2 className="text-center text-3xl font-semibold my-5">Submit Your Request</h2>
-            <div className="w-1/2 mx-auto">
+            <div className="hero pt-32 pb-10" style={{ backgroundImage: 'url(https://i.ibb.co/FsNxN41/teacherrequest.jpg)' }}>
+                <div className="hero-content text-center text-neutral-content">
+                    <div className="max-w-md md:max-w-2xl">
+                        <h1 className="mb-5 text-5xl font-bold text-slate-200">Submit Your Teacher Request Form</h1>
+                    </div>
+                </div>
+            </div>
+            <div className="w-1/2 mx-auto my-10">
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="mb-8">
-                        <h3 className="font-semibold">Name</h3>
-                        <input className="w-full p-2 border-2 rounded" type="text" defaultValue={user.displayName} {...register("name", { required: true })} name="name" placeholder="Type here" id="" />
-                    </div>
-                    <div className="mb-8">
-                        <h3 className="font-semibold">Email</h3>
-                        <input className="w-full p-2 border-2 rounded" type="email" defaultValue={user.email} {...register("email", { required: true })} name="email" placeholder="Type here" id="" />
-                    </div>
-                    <div className="mb-8">
-                        <h3 className="font-semibold">Photo</h3>
-                        <input className="w-full p-2 border-2 rounded" type="text" name="photo" defaultValue={user.photoURL} {...register("photo", { required: true })} placeholder="Photo here" id="" />
-                    </div>
-                    <div className="mb-8">
-                        <h3 className="font-semibold">Experience</h3>
-                        <select id="experience" name="experience" className="w-full p-2 border-2 rounded" {...register("experience")}>
+                    <div className="mb-5">
+                        <h3 className="font-bold">Experience</h3>
+                        <select id="experience" name="experience" className="w-full p-2 border-2 border-sky-700 rounded" {...register("experience")}>
                             <option value="Beginner">Beginner</option>
                             <option value="Experienced">Experienced</option>
                             <option value="Some idea">Some Idea</option>
                         </select>
                     </div>
-                    <div className="mb-8">
-                        <h3 className="font-semibold">Category</h3>
-                        <select id="category" name="category" className="w-full p-2 border-2 rounded" {...register("category")}>
+                    <div className="mb-5">
+                        <h3 className="font-bold">Category</h3>
+                        <select id="category" name="category" className="w-full p-2 border-2 border-sky-700 rounded" {...register("category")}>
                             <option value="Web Development">Web Development</option>
                             <option value="Marketing">Digital Marketing</option>
                             <option value="Graphic Design">Graphic Design</option>
@@ -74,13 +69,12 @@ const TeacherRequest = () => {
                             <option value="Language">Language Learning</option>
                         </select>
                     </div>
-                    <div className="mb-8">
-                        <h3 className="font-semibold">Status</h3>
-                        <input className="w-full p-2 border-2 rounded" type="text" defaultValue="pending" {...register("status", { required: true })} id="" />
+                    <div className="text-center">
+                        <input className="bg-sky-700 text-slate-100 font-semibold rounded px-5 py-2 hover:bg-sky-600" type="submit" value="Submit for Review" />
                     </div>
-                    <input className="bg-cyan-500 text-white font-semibold w-full rounded-md py-2 mt-4" type="submit" value="Submit for Review" />
                 </form>
             </div>
+            <Footer></Footer>
         </div>
     );
 };
