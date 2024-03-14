@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../../Shared/Navbar/Navbar";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import AllClass from "./AllClass";
+import Footer from "../../Shared/Footer/Footer";
 
 const AllClasses = () => {
     const [allClass, setAllClass] = useState([]);
@@ -20,14 +21,21 @@ const AllClasses = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="mt-28">
-                <h2 className="text-center text-3xl font-semibold my-5">All Classes</h2>
-                <div className="grid lg:grid-cols-3 gap-6 mb-10">
+            <div className="">
+                <div className="hero pt-32 pb-10" style={{ backgroundImage: 'url(https://i.ibb.co/hdv8wYg/allclass.jpg)' }}>
+                    <div className="hero-content text-center text-neutral-content">
+                        <div className="max-w-md">
+                            <h1 className="mb-5 text-5xl font-bold text-slate-200">Explore Classes</h1>
+                        </div>
+                    </div>
+                </div>
+                <div className="grid lg:grid-cols-3 gap-6 my-20">
                     {
                         accepted.map(card => <AllClass key={card.id} card={card}></AllClass>)
                     }
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };
