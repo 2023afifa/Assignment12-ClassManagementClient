@@ -21,19 +21,17 @@ const AllClasses = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="">
-                <div className="hero pt-32 pb-10" style={{ backgroundImage: 'url(https://i.ibb.co/hdv8wYg/allclass.jpg)' }}>
-                    <div className="hero-content text-center text-neutral-content">
-                        <div className="max-w-md">
-                            <h1 className="mb-5 text-5xl font-bold text-slate-200">Explore Classes</h1>
-                        </div>
+            <div className="hero pt-32 pb-10" style={{ backgroundImage: 'url(https://i.ibb.co/hdv8wYg/allclass.jpg)' }}>
+                <div className="hero-content text-center text-neutral-content">
+                    <div className="max-w-md">
+                        <h1 className="mb-5 text-5xl font-bold text-slate-200">Explore Classes</h1>
                     </div>
                 </div>
-                <div className="grid lg:grid-cols-3 gap-6 my-20 lg:mx-10">
-                    {
-                        accepted.map(card => <AllClass key={card.id} card={card}></AllClass>)
-                    }
-                </div>
+            </div>
+            <div className="grid lg:grid-cols-3 gap-6 my-20 lg:mx-10">
+                {
+                    accepted.map(card => <AllClass key={card.id} card={card}></AllClass>)
+                }
             </div>
             <Footer></Footer>
         </div>
