@@ -49,7 +49,7 @@ const TeacherRequest = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-1/2 mx-auto my-10">
+            <div className="w-2/3 lg:w-1/2 mx-auto my-10">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-5">
                         <h3 className="font-bold">Experience</h3>
