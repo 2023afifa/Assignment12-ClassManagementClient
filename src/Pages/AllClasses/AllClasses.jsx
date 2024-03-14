@@ -29,7 +29,7 @@ const AllClasses = () => {
                         </div>
                     </div>
                 </div>
-                <div className="grid lg:grid-cols-3 gap-6 my-20">
+                <div className="grid lg:grid-cols-3 gap-6 my-20 lg:mx-10">
                     {
                         accepted.map(card => <AllClass key={card.id} card={card}></AllClass>)
                     }
