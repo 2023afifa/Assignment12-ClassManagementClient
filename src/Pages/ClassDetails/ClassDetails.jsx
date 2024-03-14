@@ -17,7 +17,7 @@ const ClassDetails = () => {
             <div className="bg-sky-100 py-20">
                 <h2 className="text-center text-3xl font-semibold my-5">Class Details</h2>
                 <div className="">
-                    <div className="card bg-slate-200 w-3/5 mx-auto rounded-sm shadow-2xl">
+                    <div className="card bg-slate-200 w-10/12 md:w-3/4 lg:w-3/5 mx-auto rounded-sm shadow-2xl">
                         <figure><img src={image} alt="Album" /></figure>
                         <div className="card-body">
                             <h2 className="card-title text-sky-700 text-4xl font-bold">{title}</h2>
