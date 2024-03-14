@@ -4,6 +4,7 @@ import { RiContactsBook2Line } from "react-icons/ri";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../Hooks/useAdmin";
 import useTeacher from "../Hooks/useTeacher";
+import "./Dashboard.css";
 
 
 const Dashboard = () => {
@@ -14,12 +15,12 @@ const Dashboard = () => {
     return (
         <div className="flex">
 
-            <div className="w-64 min-h-screen bg-cyan-500">
+            <div className="w-64 min-h-screen bg-sky-600 text-slate-300">
                 <div className="text-center py-5">
                     <h1 className="text-2xl font-extrabold">SkillNest</h1>
                     <p className="text-xl font-semibold">Academy</p>
                 </div>
-                <ul className="menu font-bold lg:text-lg">
+                <ul className="menu font-bold lg:text-lg dashboardStyle">
                     {
                         isAdmin ?
                             (<>

@@ -1,0 +1,10 @@
+.dashboardStyle>li>a.active {
+    background-color: rgb(203 213 225) !important;
+    color: rgb(2 132 199) !important;
+}
+
+.dashboardStyle>li>a:hover {
+    background-color: transparent !important;
+    color: rgb(203 213 225) !important;
+    text-decoration-line: underline;
+}

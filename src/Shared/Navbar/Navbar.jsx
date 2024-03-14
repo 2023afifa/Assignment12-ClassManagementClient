@@ -2,6 +2,8 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import "./Navbar.css";
 import { MdOutlineMenu } from "react-icons/md";
+import { AiOutlineMail } from "react-icons/ai";
+import { IoMdPerson } from "react-icons/io";
 
 
 const Navbar = () => {
@@ -52,9 +54,9 @@ const Navbar = () => {
                                         </div>
                                     </div>
                                     <ul className="menu menu-sm dropdown-content font-semibold mt-1 z-[1] p-2 shadow bg-slate-200 rounded w-52">
-                                        <li><h2 className="hover:bg-transparent">Name: <span>{user.displayName}</span></h2></li>
-                                        <li><h2 className="hover:bg-transparent">Email: <span>{user.email}</span></h2></li>
-                                        <li><Link to="/dashboard" className="md:text-xl my-2 text-sky-700">Go To Dashboard</Link></li>
+                                        <li><Link to="/dashboard" className="md:text-xl">Dashboard</Link></li>
+                                        <li><h2 className="hover:bg-transparent"><IoMdPerson className="text-sky-800 text-xl" />{user.displayName}</h2></li>
+                                        <li><h2 className="hover:bg-transparent"><AiOutlineMail className="text-sky-800 text-xl" />{user.email}</h2></li>
                                         <button onClick={handleLogout} className="bg-sky-700 text-white rounded-lg py-1 mt-2">Logout</button>
                                     </ul>
                                 </div>
