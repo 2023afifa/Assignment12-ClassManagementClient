@@ -1,7 +1,7 @@
 const ErrorPage = () => {
     return (
-        <div className="my-16">
-            <img className="w-2/5 mx-auto" src="../../images/error.jpg" alt="" />
+        <div>
+            <img className="max-h-screen mx-auto" src="https://i.ibb.co/PGC6VMH/errorpic.jpg" alt="" />
         </div>
     );
 };
