@@ -59,7 +59,8 @@ const SignUp = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="bg-slate-100 p-10">
+                    <div className="bg-slate-100 px-10 pb-10">
+                        <p className="text-center text-sky-700 font-bold py-3">Already registered? Go to <Link to="/signin" className="underline hover:text-sky-600">SIGN IN</Link></p>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="mb-4">
                                 <h3 className="font-bold">Name</h3>
@@ -97,7 +98,6 @@ const SignUp = () => {
                             </div>
                             <input className="bg-sky-700 text-slate-200 font-semibold w-full rounded py-2 mt-4 hover:bg-sky-600" type="submit" value="Sign Up" />
                         </form>
-                        <p className="text-center text-sky-700 font-bold mt-5">Already registered? Go to <Link to="/signin" className="underline hover:text-sky-600">SIGN IN</Link></p>
                     </div>
                 </div>
             </div>

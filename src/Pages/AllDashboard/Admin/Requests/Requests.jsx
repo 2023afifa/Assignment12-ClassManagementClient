@@ -47,7 +47,6 @@ const Requests = () => {
 
     return (
         <div>
-            <Navbar></Navbar>
             <h2 className="text-3xl text-center text-cyan-500 font-semibold mb-5">All Requests</h2>
             <h3 className="text-xl font-bold mb-3">Total Requests: {requests.length}</h3>
             <div className="overflow-x-auto">

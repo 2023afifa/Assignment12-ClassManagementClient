@@ -14,7 +14,6 @@ const Dashboard = () => {
 
     return (
         <div className="flex">
-
             <div className="md:w-64 min-h-screen bg-sky-600 text-slate-300">
                 <div className="text-center py-5">
                     <h1 className="text-2xl font-extrabold">SkillNest</h1>
@@ -41,13 +40,13 @@ const Dashboard = () => {
                             isTeacher ?
                                 (<>
                                     <li>
+                                        <NavLink to="/dashboard/teacherprofile"> Teacher Profile</NavLink>
+                                    </li>
+                                    <li>
                                         <NavLink to="/dashboard/addclass"> Add Class</NavLink>
                                     </li>
                                     <li>
                                         <NavLink to="/dashboard/myclass"> My Class</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to="/dashboard/teacherprofile"> Teacher Profile</NavLink>
                                     </li>
                                 </>)
                                 :
@@ -72,12 +71,10 @@ const Dashboard = () => {
                     </li>
                 </ul>
             </div>
-
             <div className="flex-1 p-8">
                 {/* <h2 className="text-center text-sky-700 lg:text-5xl font-extrabold">Dashboard</h2> */}
                 <Outlet></Outlet>
             </div>
-
         </div>
     );
 };

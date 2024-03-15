@@ -35,18 +35,20 @@ const AClass = ({ card }) => {
 
     return (
         <div>
-            <div className="card w-96 h-[550px] rounded-none bg-base-100 shadow-md mx-auto">
-                <figure><img src={image} alt="Food" /></figure>
+            <div className="card w-96 md:w-[450px] h-[450px] rounded bg-slate-100 shadow-xl mx-auto">
+                <figure className="h-1/2"><img src={image} alt="Course" /></figure>
                 <div className="card-body">
-                    <h2 className="card-title text-cyan-700">{title}</h2>
-                    <p className="font-semibold">{name}</p>
+                    <h2 className="card-title text-sky-700 text-2xl font-bold">{title}</h2>
                     <p>{description}</p>
-                    <p><span className="font-semibold">Price:</span> ${price}</p>
-
-                    <div className="card-actions justify-center">
-                        <Link to={`/update/${_id}`}><button className="btn bg-orange-500 text-white">Update</button></Link>
-                        <button onClick={() => handleDelete(_id)} className="btn bg-red-500 text-white">Delete</button>
-                        <Link to={`/seedetails/${_id}`}><button disabled={classStatus !== "Accepted"} className="btn bg-cyan-500 text-white">See Details</button></Link>
+                    <p className="text-sky-700 text-2xl font-bold">${price}</p>
+                    <div className="card-actions justify-around items-center">
+                        <Link to={`/update/${_id}`}>
+                            <button className="text-slate-100 bg-orange-600 px-5 py-2 font-bold rounded-sm hover:bg-slate-100 hover:text-orange-600">Update</button>
+                        </Link>
+                        <button onClick={() => handleDelete(_id)} className="text-slate-100 bg-red-600 px-5 py-2 font-bold rounded-sm hover:bg-slate-100 hover:text-red-600">Delete</button>
+                        <Link to={`/seedetails/${_id}`}>
+                            <button disabled={classStatus !== "Accepted"} className="text-slate-100 bg-sky-700 px-5 py-2 font-bold rounded-sm hover:bg-slate-100 hover:text-sky-700">See Details</button>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -55,3 +57,27 @@ const AClass = ({ card }) => {
 };
 
 export default AClass;
+
+
+
+
+
+{/* <div className="card w-96 h-[550px] rounded-none bg-base-100 shadow-md mx-auto">
+    <figure><img src={image} alt="Food" /></figure>
+    <div className="card-body">
+        <h2 className="card-title text-cyan-700">{title}</h2>
+        <p className="font-semibold">{name}</p>
+        <p>{description}</p>
+        <p><span className="font-semibold">Price:</span> ${price}</p>
+
+        <div className="card-actions justify-center">
+            <Link to={`/update/${_id}`}>
+                <button className="btn bg-orange-500 text-white">Update</button>
+            </Link>
+            <button onClick={() => handleDelete(_id)} className="btn bg-red-500 text-white">Delete</button>
+            <Link to={`/seedetails/${_id}`}>
+                <button disabled={classStatus !== "Accepted"} className="btn bg-cyan-500 text-white">See Details</button>
+            </Link>
+        </div>
+    </div>
+</div> */}
