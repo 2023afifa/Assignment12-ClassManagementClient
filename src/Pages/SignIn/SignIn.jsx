@@ -76,29 +76,32 @@ const SignIn = () => {
                         </div>
                     </div>
                     <div className="bg-slate-100">
-                        <form onSubmit={handleSignIn} className="card-body">
-                            <div className="form-control">
+                        <p className='text-center text-sky-700 font-bold pt-3'>New here? <Link to="/signup" className="underline hover:text-sky-600">SIGN UP</Link></p>
+                        <form onSubmit={handleSignIn} className="card-body py-0">
+                            <div className="form-control mb-3">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="label-text font-bold">Email</span>
                                 </label>
-                                <input type="email" name="email" placeholder="Enter email" className="input" required />
+                                <input type="email" name="email" placeholder="Enter email" className="input rounded" required />
                             </div>
-                            <div className="form-control">
+                            <div className="form-control mb-5">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text font-bold">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="Enter password" className="input" required />
+                                <input type="password" name="password" placeholder="Enter password" className="input rounded" required />
                             </div>
                             {
                                 errorMessage && <p className="text-center text-red-500">{errorMessage}</p>
                             }
 
-                            <div className="form-control mt-6">
-                                <input className="bg-sky-700 text-slate-200 font-semibold w-full rounded py-2 mt-4 hover:bg-sky-600" type="submit" value="Login" />
+                            <div className="form-control">
+                                <input className="bg-sky-700 text-slate-200 font-semibold w-full rounded py-2 hover:bg-sky-600" type="submit" value="Login" />
                             </div>
                         </form>
-                        <p className="text-center pb-3">Login with <a onClick={handleGoogleLogIn} className="font-bold">Google</a></p>
-                        <p className='mx-auto mb-5 text-cyan-500 font-bold text-xl'><small>New here? <Link to="/signup">Create a New Account</Link></small></p>
+                        <div className="divider mx-8">OR</div>
+                        <div className="mx-8 pb-10">
+                            <button onClick={handleGoogleLogIn} className="btn btn-outline normal-case rounded text-sky-700 w-full">Login with Google</button>
+                        </div>
                     </div>
                 </div>
             </div>
