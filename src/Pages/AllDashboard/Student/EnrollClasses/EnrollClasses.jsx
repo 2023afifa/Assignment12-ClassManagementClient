@@ -26,7 +26,7 @@ const EnrollClasses = () => {
 
     return (
         <div>
-            <h2 className="text-center text-3xl font-semibold mt-5 mb-10">My Classes</h2>
+            <h2 className="text-center text-3xl font-semibold mt-5 mb-10">My Enrolled Classes</h2>
             <div className="grid lg:grid-cols-2 gap-10">
                 {
                     enrollClass.map(card => <EnrollClass key={card.id} card={card}></EnrollClass>)

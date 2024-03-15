@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../Shared/Navbar/Navbar";
+import Footer from "../../Shared/Footer/Footer";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -49,34 +50,40 @@ const SignUp = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="shadow-2xl">
-                <div className="py-14">
-                    <div className="w-1/3 mx-auto">
-                        <h2 className="text-2xl font-bold text-center mb-8">Sign Up</h2>
+            <div className="bg-sky-200 py-24">
+                <div className="w-2/5 mx-auto shadow-2xl">
+                    <div className="hero py-20" style={{ backgroundImage: 'url(https://i.ibb.co/wYsjrCm/register.jpg)' }}>
+                        <div className="hero-content text-center">
+                            <div className="max-w-md">
+                                <h2 className="text-4xl font-bold text-slate-50">Sign Up For Free!!!</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="bg-slate-100 p-10">
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <div className="mb-8">
-                                <h3 className="font-semibold">Name</h3>
+                            <div className="mb-4">
+                                <h3 className="font-bold">Name</h3>
                                 <input className="w-full p-2" type="text" {...register("name", { required: true })} name="name" placeholder="Type here" id="" />
                                 {
                                     errors.name && <span className="text-red-600 font-medium">This field is required</span>
                                 }
                             </div>
-                            <div className="mb-8">
-                                <h3 className="font-semibold">Photo</h3>
-                                <input className="w-full p-2" type="text" {...register("photoURL", { required: true })} placeholder="Photo here" id="" />
+                            <div className="mb-4">
+                                <h3 className="font-bold">Photo</h3>
+                                <input className="w-full p-2" type="text" {...register("photoURL", { required: true })} placeholder="Type here" id="" />
                                 {
                                     errors.photoUrl && <span className="text-red-600 font-medium">This field is required</span>
                                 }
                             </div>
-                            <div className="mb-8">
-                                <h3 className="font-semibold">Email</h3>
+                            <div className="mb-4">
+                                <h3 className="font-bold">Email</h3>
                                 <input className="w-full p-2" type="email" {...register("email", { required: true })} name="email" placeholder="Type here" id="" />
                                 {
                                     errors.email && <span className="text-red-600 font-medium">Email is required</span>
                                 }
                             </div>
-                            <div className="mb-8">
-                                <h3 className="font-semibold">Password</h3>
+                            <div className="mb-4">
+                                <h3 className="font-bold">Password</h3>
                                 <input className="w-full p-2" type="password" {...register("password", { required: true, minLength: 6, pattern: /(?=(.*[!@#$%^&*()\-__+.]){1,})/ })} name="password" placeholder="Type here" id="" />
                                 {
                                     errors.password?.type === "required" && <p className="text-red-600 font-medium">Password is required</p>
@@ -88,12 +95,13 @@ const SignUp = () => {
                                     errors.password?.type === "pattern" && <p className="text-red-600 font-medium">Password must have atleast one special character</p>
                                 }
                             </div>
-                            <input className="bg-cyan-500 text-white font-semibold w-full rounded-md py-2 mt-4" type="submit" value="Sign Up" />
+                            <input className="bg-sky-700 text-slate-200 font-semibold w-full rounded py-2 mt-4 hover:bg-sky-600" type="submit" value="Sign Up" />
                         </form>
-                        <p className="text-center text-cyan-500 font-bold mt-5"><small>Already registered? <Link to="/signin">Go to sign in</Link></small></p>
+                        <p className="text-center text-sky-700 font-bold mt-5">Already registered? Go to <Link to="/signin" className="underline hover:text-sky-600">SIGN IN</Link></p>
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };
