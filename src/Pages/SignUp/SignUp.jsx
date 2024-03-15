@@ -51,7 +51,7 @@ const SignUp = () => {
         <div>
             <Navbar></Navbar>
             <div className="bg-sky-200 py-24">
-                <div className="w-2/5 mx-auto shadow-2xl">
+                <div className="w-10/12 md:w-3/4 lg:w-2/5 mx-auto shadow-2xl">
                     <div className="hero py-20" style={{ backgroundImage: 'url(https://i.ibb.co/wYsjrCm/register.jpg)' }}>
                         <div className="hero-content text-center">
                             <div className="max-w-md">
