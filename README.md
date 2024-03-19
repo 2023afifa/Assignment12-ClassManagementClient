@@ -8,3 +8,4 @@ The admin can make more admins, see teacher requests and see course request also
 If a teacher make a course then the admin will verify it and then it will show the All classes page.
 The teacher can update or delete his/her course if he/she want to.
 
+Live Link: https://classmanagement-8dd56.web.app/
